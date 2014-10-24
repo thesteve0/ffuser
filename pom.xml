@@ -64,7 +64,6 @@ jboss-eap-*-maven-repository/org/jboss/spec/jboss-javaee-6.0
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate</artifactId>
             <version>3.5.4-Final</version>
-            <type>pom</type>
         </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>
