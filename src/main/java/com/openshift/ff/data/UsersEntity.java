@@ -16,7 +16,9 @@ public class UsersEntity {
     private Timestamp entrytimestamp;
 
     @Id
-    @Column(name = "usersid")
+    @Column(name = "usersid", unique = true )
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_usersid_seq")
+    @SequenceGenerator(name =  "users_usersid_seq", sequenceName =  "users_usersid_seq")
     public int getUsersid() {
         return usersid;
     }
