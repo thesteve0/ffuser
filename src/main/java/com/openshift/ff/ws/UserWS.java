@@ -7,10 +7,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +43,17 @@ public class UserWS {
         Query query = em.createQuery("select u from UsersEntity u where usersid = " + id);
 
         return (UsersEntity) query.getSingleResult();
+
+    }
+
+    @POST
+    @Consumes("application/json")
+    @Produces("application/json")
+    public UsersEntity addUser(UsersEntity user){
+
+        em.persist(user);
+
+        return user;
 
     }
 
