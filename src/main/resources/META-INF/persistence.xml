@@ -7,17 +7,22 @@
         <class>com.openshift.ff.data.ManyUsersHasManyAwardsEntity</class>
         <class>com.openshift.ff.data.UsersEntity</class>
         <properties>
-            <property name="hibernate.connection.url" value="jdbc:postgresql://127.0.0.1:5432/flatfluffy"/>
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://54494f14e0b8cdf80e0001e1-thesteve0.rhcloud.com:49796/flatfluffy"/>
+            <property name="hibernate.connection.username" value="adminz2zdxgl"/>
+            <property name="hibernate.connection.password" value="q-i8tN_8ZZbG"/>
+            <!--
+            <property name="hibernate.connection.url" value="jdbc:postgresql://127.0.0.1:5432/flatfluffy"/>
             <property name="hibernate.connection.username" value="spousty"/>
             <property name="hibernate.connection.password" value="data+moredta"/>
+            -->
             <property name="hibernate.archive.autodetection" value="class"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hbm2ddl.auto" value="update"/>
 
 
-            <property name="hibernate.connection.provider_class" value="org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider"/>
+            <property name="hibernate.connection.provider_class" value="org.hibernate.connection.C3P0ConnectionProvider"/>
             <property name="hibernate.c3p0.acquire_increment" value="3"/>
             <property name="hibernate.c3p0.idle_test_period" value="3000"/>
             <property name="hibernate.c3p0.min_size" value="10"/>
