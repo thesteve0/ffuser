@@ -2,6 +2,7 @@ package com.openshift.ff.data;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 /**
  * Created by spousty on 10/26/14.
@@ -11,9 +12,9 @@ import java.sql.Timestamp;
 public class UsersEntity {
     private int usersid;
     private String nick;
-    private Integer points;
+    private Integer points = 0;
     private String notes;
-    private Timestamp entrytimestamp;
+    private Timestamp entrytimestamp = Timestamp.valueOf(LocalDateTime.now());
 
     @Id
     @Column(name = "usersid", unique = true, updatable = false, nullable = false)
