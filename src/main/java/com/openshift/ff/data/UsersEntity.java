@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 public class UsersEntity {
     private int usersid;
     private String nick;
-    private Integer points = 0;
+    private Integer points;
     private String notes;
     private Timestamp entrytimestamp = Timestamp.valueOf(LocalDateTime.now());
 
@@ -39,7 +39,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "points")
+    @Column(name = "points", columnDefinition = "integer default 0")
     public Integer getPoints() {
         return points;
     }
@@ -59,7 +59,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "entrytimestamp", updatable = false)
+    @Column(name = "entrytimestamp", updatable = false, columnDefinition = "timestamp default now()")
     public Timestamp getEntrytimestamp() {
         return entrytimestamp;
     }
