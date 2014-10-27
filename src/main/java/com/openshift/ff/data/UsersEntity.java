@@ -14,7 +14,13 @@ public class UsersEntity {
     private String nick;
     private Integer points;
     private String notes;
-    private Timestamp entrytimestamp = Timestamp.valueOf(LocalDateTime.now());
+    private Timestamp entrytimestamp;
+
+    @PrePersist
+    protected void onCreate() {
+        entrytimestamp = Timestamp.valueOf(LocalDateTime.now());
+        points = 0;
+    }
 
     @Id
     @Column(name = "usersid", unique = true, updatable = false, nullable = false)
@@ -39,7 +45,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "points", columnDefinition = "integer default 0")
+    @Column(name = "points")
     public Integer getPoints() {
         return points;
     }
@@ -58,8 +64,8 @@ public class UsersEntity {
         this.notes = notes;
     }
 
-    @Basic
-    @Column(name = "entrytimestamp", updatable = false, columnDefinition = "timestamp default now()")
+    @Column(name = "entrytimestamp", updatable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     public Timestamp getEntrytimestamp() {
         return entrytimestamp;
     }
