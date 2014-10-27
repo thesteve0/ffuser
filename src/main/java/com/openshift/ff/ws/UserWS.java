@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,17 @@ public class UserWS {
         users = (ArrayList<UsersEntity>) query.getResultList();
 
         return users;
+    }
+
+    @GET
+    @Produces("application/json")
+    @Path("{id}")
+    public UsersEntity getAUserById(@PathParam("id") String id){
+
+        Query query = em.createQuery("select u from UsersEntity u where usersid = " + id);
+
+        return (UsersEntity) query.getSingleResult();
+
     }
 
 
