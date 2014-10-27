@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
- * Created by spousty on 10/23/14.
+ * Created by spousty on 10/26/14.
  */
 public class ManyUsersHasManyAwardsEntityPK implements Serializable {
     private int usersidUsers;

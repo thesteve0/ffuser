@@ -3,7 +3,7 @@ package com.openshift.ff.data;
 import javax.persistence.*;
 
 /**
- * Created by spousty on 10/23/14.
+ * Created by spousty on 10/26/14.
  */
 @Entity
 @Table(name = "many_users_has_many_awards", schema = "public", catalog = "flatfluffy")
