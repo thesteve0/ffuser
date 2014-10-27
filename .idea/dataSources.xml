@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3008351495">
+  <component name="DataSourceManagerImpl" format="xml" hash="439056597">
     <data-source source="LOCAL" name="PostgreSQL - flatfluffy@127.0.0.1" uuid="93b39a8b-1ac3-4744-a258-4d884beb4050">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
@@ -11,6 +11,18 @@
       <schema-pattern>flatfluffy.pg_catalog flatfluffy.public</schema-pattern>
       <default-schemas>flatfluffy.pg_catalog flatfluffy.public</default-schemas>
       <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="users" uuid="43fd124c-a91a-4f94-b91a-ef1e1c731983">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/flatfluffy</jdbc-url>
+      <user-name>spousty</user-name>
+      <user-password>dfcedfcbdfdedfcbdf81dfc7dfc5dfd8dfcfdfcedfdedfcb</user-password>
+      <libraries>
+        <library>
+          <url>file://$MAVEN_REPOSITORY$/org/postgresql/postgresql/9.3-1102-jdbc41/postgresql-9.3-1102-jdbc41.jar</url>
+        </library>
+      </libraries>
     </data-source>
   </component>
 </project>
