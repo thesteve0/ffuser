@@ -66,7 +66,6 @@ public class UsersEntity {
     }
 
     @Column(name = "entrytimestamp", updatable = false)
-    @Temporal(TemporalType.TIMESTAMP)
     public Timestamp getEntrytimestamp() {
         return entrytimestamp;
     }
