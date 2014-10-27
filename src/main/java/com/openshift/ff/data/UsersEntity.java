@@ -1,8 +1,11 @@
 package com.openshift.ff.data;
 
 import javax.persistence.*;
+import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.util.Calendar;
 
 /**
  * Created by spousty on 10/26/14.
@@ -18,8 +21,9 @@ public class UsersEntity {
 
     @PrePersist
     protected void onCreate() {
-        entrytimestamp = Timestamp.valueOf(LocalDateTime.now());
+        entrytimestamp = new Timestamp(Calendar.getInstance().getTime().getTime());
         points = 0;
+        System.out.println("in the before create");
     }
 
     @Id
