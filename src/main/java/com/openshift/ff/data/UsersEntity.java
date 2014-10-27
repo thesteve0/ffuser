@@ -1,10 +1,7 @@
 package com.openshift.ff.data;
 
 import javax.persistence.*;
-import java.sql.Time;
 import java.sql.Timestamp;
-import java.time.Instant;
-import java.time.LocalDateTime;
 import java.util.Calendar;
 
 /**
