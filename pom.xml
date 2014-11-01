@@ -95,7 +95,7 @@ jboss-eap-*-maven-repository/org/jboss/spec/jboss-javaee-6.0
         <dependency>
             <groupId>io.iron.ironmq</groupId>
             <artifactId>ironmq</artifactId>
-            <version>3.0.1</version>
+            <version>0.0.19</version>
         </dependency>
 	</dependencies>
 	<profiles>
