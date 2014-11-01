@@ -20,7 +20,6 @@ public class UsersEntity {
     protected void onCreate() {
         entrytimestamp = new Timestamp(Calendar.getInstance().getTime().getTime());
         points = 0;
-        System.out.println("in the before create");
     }
 
     @Id

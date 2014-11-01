@@ -29,11 +29,15 @@ public class UserWS {
     @PersistenceContext(name = "users")
     EntityManager em;
 
+    Queue newUserQueue;
 
+    public UserWS() {
+        //for MessageQue
+        Client client = new Client(System.getenv("OPENSHIFT_IRONMQ_PROJECT"), System.getenv("OPENSHIFT_IRONMQ_TOKEN"), Cloud.ironAWSUSEast);
+        newUserQueue = client.queue("added_new_user");
 
-    //for MessageQue
-    //Client client = new Client(System.getenv("OPENSHIFT_IRONMQ_PROJECT"), System.getenv("OPENSHIFT_IRONMQ_TOKEN"), Cloud.ironAWSUSEast);
-    //Queue newUserQueue = client.queue("added_new_user");
+    }
+
 
     //for any JSON work we need to do
     Gson gson = new Gson();
