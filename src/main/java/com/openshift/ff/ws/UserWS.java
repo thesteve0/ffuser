@@ -1,6 +1,11 @@
 package com.openshift.ff.ws;
 
+
+import com.google.gson.Gson;
 import com.openshift.ff.data.UsersEntity;
+import io.iron.ironmq.Client;
+import io.iron.ironmq.Cloud;
+import io.iron.ironmq.Queue;
 
 import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
@@ -20,8 +25,16 @@ import java.util.List;
 @Path("/")
 public class UserWS {
 
+    //For database work
     @PersistenceContext(name = "users")
     EntityManager em;
+
+    //for MessageQue
+    Client client = new Client(System.getenv("OPENSHIFT_IRONMQ_PROJECT"), System.getenv("OPENSHIFT_IRONMQ_TOKEN"), Cloud.ironAWSUSEast);
+    Queue newUserQueue = client.queue("added_new_user");
+
+    //for any JSON work we need to do
+    Gson gson = new Gson();
 
     @GET
     @Produces("application/json")
@@ -51,7 +64,12 @@ public class UserWS {
     @Produces("application/json")
     public UsersEntity addUser(UsersEntity user){
 
-        em.persist(user);
+        try {
+            em.persist(user);
+            newUserQueue.push(gson.toJson(user));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return user;
 

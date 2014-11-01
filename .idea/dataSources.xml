@@ -15,9 +15,9 @@
     <data-source source="LOCAL" name="users" uuid="43fd124c-a91a-4f94-b91a-ef1e1c731983">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/flatfluffy</jdbc-url>
-      <user-name>spousty</user-name>
-      <user-password>dfcedfcbdfdedfcbdf81dfc7dfc5dfd8dfcfdfcedfdedfcb</user-password>
+      <jdbc-url>jdbc:postgresql://54494f14e0b8cdf80e0001e1-thesteve0.rhcloud.com:49796/flatfluffy</jdbc-url>
+      <user-name>adminz2zdxgl</user-name>
+      <user-password>dfdbdf87dfc3df92dfdedfe4dff5df92dff0dff0dfc8dfed</user-password>
       <libraries>
         <library>
           <url>file://$MAVEN_REPOSITORY$/org/postgresql/postgresql/9.3-1102-jdbc41/postgresql-9.3-1102-jdbc41.jar</url>
