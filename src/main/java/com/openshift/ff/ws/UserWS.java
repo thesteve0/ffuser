@@ -73,7 +73,7 @@ public class UserWS {
         System.out.println(System.getenv("OPENSHIFT_IRONMQ_PROJECT"));
         try {
             em.persist(user);
-//            newUserQueue.push(gson.toJson(user));
+            newUserQueue.push(gson.toJson(user));
         } catch (Exception e) {
             e.printStackTrace();
         }
