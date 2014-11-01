@@ -29,6 +29,8 @@ public class UserWS {
     @PersistenceContext(name = "users")
     EntityManager em;
 
+    System.out.println(System.getenv("OPENSHIFT_IRONMQ_PROJECT"));
+
     //for MessageQue
     Client client = new Client(System.getenv("OPENSHIFT_IRONMQ_PROJECT"), System.getenv("OPENSHIFT_IRONMQ_TOKEN"), Cloud.ironAWSUSEast);
     Queue newUserQueue = client.queue("added_new_user");
