@@ -33,8 +33,8 @@ public class UserWS {
 
     public UserWS() {
         //for MessageQue
-        Client client = new Client("544ab5b057435f000900000b", "C8PyHbRsRRz7vTNBIqOE2JM_y3E", Cloud.ironAWSUSEast);
-        newUserQueue = client.queue("added_new_user");
+        Client client = new Client(System.getenv("OPENSHIFT_IRONMQ_PROJECT"), System.getenv("OPENSHIFT_IRONMQ_TOKEN"), Cloud.ironAWSUSEast);
+        newUserQueue = client.queue("5453d7a758a847405b534b01");
 
     }
 
@@ -73,6 +73,7 @@ public class UserWS {
         System.out.println(System.getenv("OPENSHIFT_IRONMQ_PROJECT"));
         try {
             em.persist(user);
+            System.out.println(gson.toJson(user));
             newUserQueue.push(gson.toJson(user));
         } catch (Exception e) {
             e.printStackTrace();
