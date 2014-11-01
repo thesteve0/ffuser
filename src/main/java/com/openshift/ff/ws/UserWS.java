@@ -76,7 +76,7 @@ public class UserWS {
             System.out.println(gson.toJson(user));
             newUserQueue.push(gson.toJson(user));
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Threw an exception: " + e.getClass() + "  :: " + e.getMessage());
         }
 
         return user;
