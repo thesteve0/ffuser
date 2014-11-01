@@ -33,7 +33,7 @@ public class UserWS {
 
     public UserWS() {
         //for MessageQue
-        Client client = new Client(System.getenv("OPENSHIFT_IRONMQ_PROJECT"), System.getenv("OPENSHIFT_IRONMQ_TOKEN"), Cloud.ironAWSUSEast);
+        Client client = new Client("544ab5b057435f000900000b", "C8PyHbRsRRz7vTNBIqOE2JM_y3E", Cloud.ironAWSUSEast);
         newUserQueue = client.queue("added_new_user");
 
     }
