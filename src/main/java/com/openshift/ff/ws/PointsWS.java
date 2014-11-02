@@ -35,7 +35,6 @@ public class PointsWS {
         //TODO add a point to the userid
         UsersEntity user = em.find(UsersEntity.class, justID.get("userid"));
         user.setPoints(user.getPoints() +1);
-        em.merge(user);
         return user;
     }
 }
