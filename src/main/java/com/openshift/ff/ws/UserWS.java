@@ -60,7 +60,6 @@ public class UserWS {
     public UsersEntity getAUserById(@PathParam("id") String id){
 
         Query query = em.createQuery("select u from UsersEntity u where usersid = " + id);
-
         return (UsersEntity) query.getSingleResult();
 
     }
@@ -70,7 +69,7 @@ public class UserWS {
     @Produces("application/json")
     public UsersEntity addUser(UsersEntity user){
 
-        System.out.println(System.getenv("OPENSHIFT_IRONMQ_PROJECT"));
+
         try {
             em.persist(user);
             newUserQueue.push(gson.toJson(user));
