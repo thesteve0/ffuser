@@ -33,7 +33,8 @@ public class PointsWS {
 
         System.out.println(justID.toString());
         //TODO add a point to the userid
-        UsersEntity user = new UsersEntity();
+        UsersEntity user = em.find(UsersEntity.class, justID.get("userid"));
+        user.setPoints(user.getPoints() +1);
         return user;
     }
 }
